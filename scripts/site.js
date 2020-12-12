@@ -355,11 +355,11 @@ function generateRickProfile(la) {
     }else if (risk < 12) {
         riskProfile = "high";
     }
-
-    var summaryText = highlightText`Dear ${la.ApplicantName} ,
-    your application for ${"$"+la.LoanAmount}, ${reviewText} . 
-    Your risk profile is ${riskProfile}
-    your unique application code is \t${createApplicationId()}`;
+    var applicationCode=String.raw`\t${createApplicationId()}`
+    var summaryText = highlightText`Dear ${la.ApplicantName} ,<br>
+    your application for ${"$"+la.LoanAmount}, ${reviewText} . <br>
+    Your risk profile is ${riskProfile}<br>
+    your unique application code is ${applicationCode}`;
 
     return summaryText;
 }
@@ -369,7 +369,7 @@ function highlightText(strings, ...values){
         if(i > 0){
             str+=`<b>${values[i-1]}</b>`;
         }
-        str+=strings.raw[i];        
+        str+=strings[i];        
     }
     return str;
 
