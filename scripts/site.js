@@ -264,20 +264,17 @@ function validateApplication() {
 function generateRickProfile(la) {
     var risk = 3;
 
-    var nameAndTitle = la.ApplicantName;
+    var nameAndTitle = la.ApplicantName.trim().toLowerCase();
+    
+    let dr=nameAndTitle.startsWith("dr");
+    let phd=nameAndTitle.startsWith("phd");
+    let phd2=nameAndTitle.startsWith("ph.d");
 
-    var indexOfMD = nameAndTitle.search("MD");
-    var indexOfMD2 = nameAndTitle.search("M.D");
-    var indexOfMD3 = nameAndTitle.search("M.D.");
-    var indexOfPhD = nameAndTitle.search("PhD");
-    var indexOfPhD2 = nameAndTitle.search("Ph.D");
-    var indexOfPhD3 = nameAndTitle.search("PHD");
-    var indexOfDr = nameAndTitle.search("Dr.");
-    var indexOfDr2 = nameAndTitle.search("DR.");
+    let md=nameAndTitle.endsWith("md");
+    let md2=nameAndTitle.endsWith("m.d");
+    let md3=nameAndTitle.endsWith("m.d.");
 
-    if (indexOfMD > -1 || indexOfMD2 > -1 || indexOfMD3 > -1 
-        || indexOfPhD > -1 || indexOfPhD2 > -1 
-        || indexOfPhD3 > -1 || indexOfDr > -1 || indexOfDr2 > -1) {
+    if (dr || phd || phd2 || md || md2 || md3) {
 
         risk = risk - 1;
     }
