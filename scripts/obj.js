@@ -1,11 +1,11 @@
 var car={
-    maker:"volvo",
+    make:"volvo",
     speed:150,
     engine:{
         size:2.0,
         make:"bmw",
         fuel:"petrol",
-        pistons:[{maker:"BMW"},{maker:"BMW"}]
+        pistons:[{maker:"BMW1"},{maker:"BMW2"}]
     },
     driven:function(){
         return "drive";
@@ -18,3 +18,7 @@ var array=[
     {car:"ford"},
     function(){ return "drive";}
 ]
+function name(){
+    var fullname="david jeo";
+    return fullname;
+}
