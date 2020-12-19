@@ -18,10 +18,7 @@ var array=[
     {car:"ford"},
     function(){ return "drive";}
 ]
-function name(){
-    var fullname="David jeo";
-    function concat(name){
-        return "Mr."+name;
-    }
-    return concat(fullname);
+function name(fullname){
+    return fullname.firstname+fullname.lastname;
 }
+console.log(name({firstname:"jeo",lastname:"david"}));
