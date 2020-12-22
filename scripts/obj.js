@@ -1,17 +1,9 @@
-console.log(this);
-var object={
-    prop:this,
-    method:function (){return this;}
-};
-
-var array=[
-    this,
-    function(){return this;}
-];
-
-function global(){
-    return this;
-};
-
-global.call(object);
+const user={
+    name:"Tyler",
+    age:27,
+    great(){
+        console.log(`Hello, Myname is ${this.name}`)
+    }
+}
+user.great();
 
