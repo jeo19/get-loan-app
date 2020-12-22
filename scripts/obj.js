@@ -1,8 +1,9 @@
-function great(){
-    console.log(`Hello, My name is ${this.name}`);
+function great(l1,l2,l3){
+    console.log(`Hello, My name is ${this.name} and I used to ${l1}, ${l2} and ${l3}.`);
 }
 const user={
     name:"Tyler",
     age:27,
 }
-great.call(user);
+const languages=["Javascript","Ruby","Python"]
+great.call(user,languages[0],languages[1],languages[2]);
