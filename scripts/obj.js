@@ -6,4 +6,5 @@ const user={
     age:27,
 }
 const languages=["Javascript","Ruby","Python"]
-great.apply(user,languages);
+const newFn=great.bind(user,languages[0],languages[1],languages[2])
+newFn();
