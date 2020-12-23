@@ -1,10 +1,6 @@
-function great(l1,l2,l3){
-    console.log(`Hello, My name is ${this.name} and I used to ${l1}, ${l2} and ${l3}.`);
+function User(name, age){
+    this.name=name;
+    this.age=age;
 }
-const user={
-    name:"Tyler",
-    age:27,
-}
-const languages=["Javascript","Ruby","Python"]
-const newFn=great.bind(user,languages[0],languages[1],languages[2])
-newFn();
+const me=new User("Tyler",23);
+console.log(`My name is ${me.name} and ${me.age} years old.`);
