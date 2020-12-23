@@ -6,4 +6,4 @@ const user={
     age:27,
 }
 const languages=["Javascript","Ruby","Python"]
-great.call(user,languages[0],languages[1],languages[2]);
+great.apply(user,languages);
