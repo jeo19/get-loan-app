@@ -4,13 +4,13 @@ const user={
     languages:["JavaScript","Ruby","Python"],
     great(){
         const hello=`Hello, my name is ${this.name} and I know`;
-        const langs=this.languages.reduce(function(str,lang,i){
+        const langs=this.languages.reduce((str,lang,i)=>{
             if(i===this.languages.length-1){
-                return `${str} and ${lang}.`
+                return `${str} and ${lang}.`;
             }
-            return `${str} ${lang},`
-        },"")
-        console.log(`${hello}+${lang}`)
+            return `${str} ${lang},`;
+        }, "")
+        console.log(`${hello}+${langs}`)
     }
 }
 user.great();
