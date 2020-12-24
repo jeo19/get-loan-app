@@ -1,6 +1,16 @@
-function User(name, age){
-    this.name=name;
-    this.age=age;
+const user={
+    name:"Tyler",
+    age:27,
+    languages:["JavaScript","Ruby","Python"],
+    great(){
+        const hello=`Hello, my name is ${this.name} and I know`;
+        const langs=this.languages.reduce(function(str,lang,i){
+            if(i===this.languages.length-1){
+                return `${str} and ${lang}.`
+            }
+            return `${str} ${lang},`
+        },"")
+        console.log(`${hello}+${lang}`)
+    }
 }
-const me=new User("Tyler",23);
-console.log(`My name is ${me.name} and ${me.age} years old.`);
+user.great();
